@@ -2,7 +2,7 @@ $(document).ready(function() {
     $('#example').DataTable( {
         "processing": true,
         "serverSide": true,
-        "ajax": "/vehicle/iteminfolist",
+        "ajax": "/iteminfolist",
         columns: [
             { data: "Id"            },
             { data: 'Sn'            },

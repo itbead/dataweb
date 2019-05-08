@@ -26,7 +26,7 @@ func NewEngine() (*xorm.Engine, error) {
 	return engine, err
 }
 
-func init()  {
+func init2()  {
 	engine, err := NewEngine()
 	defer engine.Close()
 	if err != nil {

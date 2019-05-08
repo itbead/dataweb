@@ -36,20 +36,3 @@ func (c *InfoService) Count( ) (counts int64 ) {
 	return counts
 }
 
-func (c *InfoService) SelectManyItems(code string, start int, limit int) (results []datamodels.DbVehicleItem,err error) {
-	//c.Engine.ShowSQL(true)
-	err =c.Engine.Where("sn=?", code).Limit(limit, start).Find(&results)
-	if err!=nil{
-		fmt.Println("InfoService SelectManyItems err=",err,"results=",results)
-	}
-
-	return results,err
-}
-func (c *InfoService) CountItems( ) (counts int64 ) {
-	//c.Engine.ShowSQL(true)
-	var tmp datamodels.DbVehicleItem
-	var err error
-	counts, err = c.Engine.Count(&tmp)
-	fmt.Printf("InfoService DbVehicleItem Count==%v \n err=%v\n", counts,err)
-	return counts
-}
